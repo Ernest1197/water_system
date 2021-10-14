@@ -17,11 +17,11 @@ Route::get('/', function () {
 });
 
 Route::prefix('bills')->group(function() {
-    Route::get('/', 'BillController@index')->profile('bills.index');
-    Route::get('/create', 'BillController@create')->profile('bills.create');
-    Route::post('/', 'BillController@store')->profile('bills.store');
-    Route::get('/{bill}', 'BillController@show')->profile('bills.show');
-    Route::get('/{bill}/edit', 'BillController@edit')->profile('bills.edit');
-    Route::put('/{bill}', 'BillController@update')->profile('bills.update');
-    Route::delete('/{bill}', 'BillController@destroy')->profile('bills.destroy');
+    Route::get('/', 'BillController@index')->name('bills.index');
+    Route::get('/create', 'BillController@create')->name('bills.create');
+    Route::post('/', 'BillController@store')->name('bills.store');
+    Route::get('/{bill}', 'BillController@show')->name('bills.show');
+    Route::get('/{bill}/edit', 'BillController@edit')->name('bills.edit');
+    Route::put('/{bill}', 'BillController@update')->name('bills.update');
+    Route::delete('/{bill}', 'BillController@destroy')->name('bills.destroy');
 });
