@@ -10,11 +10,11 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Auth::routes();
 
 Route::get('/', function () {
     return view('welcome');
 });
-
 
 Route::prefix('bills')->group(function() {
     Route::get('/', 'BillController@index')->profile('bills.index');

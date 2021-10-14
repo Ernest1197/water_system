@@ -10,5 +10,4 @@ class BillController extends Controller
         $this->middleware('auth');
     }
 
-    
 }
