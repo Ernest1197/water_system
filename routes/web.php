@@ -19,7 +19,7 @@ Route::get('/', function () {
 
 Route::get('/home', 'DefaultController@home')->name('home');
 
-Route::prefix('bills')->group(function() {
+Route::prefix('bills')->group(function () {
     Route::get('/', 'BillController@index')->name('bills.index');
     Route::get('/create', 'BillController@create')->name('bills.create');
     Route::post('/', 'BillController@store')->name('bills.store');
@@ -29,12 +29,12 @@ Route::prefix('bills')->group(function() {
     Route::delete('/{bill}', 'BillController@destroy')->name('bills.destroy');
 });
 
-Route::prefix('users')->group(function() {
+Route::prefix('users')->group(function () {
     Route::get('/', 'DefaultController@users')->name('users.index');
     Route::get('/create', 'DefaultController@create')->name('users.create');
     Route::post('/', 'DefaultController@store')->name('users.store');
     Route::get('/{user}', 'DefaultController@show')->name('users.show');
+    Route::get('/{user}/delete', 'DefaultController@userDelete')->name('users.destroy');
     Route::get('/{user}/edit', 'DefaultController@edit')->name('users.edit');
     Route::put('/{user}', 'DefaultController@update')->name('users.update');
-    Route::delete('/{user}', 'DefaultController@destroy')->name('users.destroy');
 });

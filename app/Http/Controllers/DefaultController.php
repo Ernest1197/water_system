@@ -29,8 +29,15 @@ class DefaultController extends Controller
 
     public function users()
     {
-        $users = User::latest()->paginate(20);
+        $users = User::paginate(20);
 
         return view('users.index', compact('users'));
+    }
+
+    public function userDelete(User $user)
+    {
+        $user->delete();
+
+        return redirect()->route('users.index');
     }
 }
