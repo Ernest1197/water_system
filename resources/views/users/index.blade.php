@@ -7,7 +7,7 @@
 			<div class="card">
 				<div class="card-header">All Users</div>
 				<div class="card-body">
-					<table class="table">
+					<table class="table table-bordered">
 						<thead class="thead-light">
 						  <tr>
 								<th scope="col">#</th>

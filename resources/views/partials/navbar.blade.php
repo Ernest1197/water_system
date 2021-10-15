@@ -8,12 +8,16 @@
 		</button>
 
 		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+            @auth
 			<!-- Left Side Of Navbar -->
 			<ul class="navbar-nav mr-auto">
-				<li class="nav-item"><a href="{{ route('bills.index') }}" class="nav-link">Bills</a></li>
-				<li class="nav-item"><a href="{{ route('users.index') }}" class="nav-link">Users</a></li>
+                <li class="nav-item"><a href="{{ route('bills.index') }}" class="nav-link">Bills</a></li>
+                @if (Auth::user()->role == 'user')
+                <li class="nav-item"><a href="{{ route('users.index') }}" class="nav-link">Users</a></li>
+                @endif
 				<li class="nav-item"><a href="{{ route('users.index') }}" class="nav-link">Credits</a></li>
-			</ul>
+            </ul>
+            @endauth
 
 			<!-- Right Side Of Navbar -->
 			<ul class="navbar-nav ml-auto">
