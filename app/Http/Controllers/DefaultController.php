@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Bill;
 use App\User;
 use Illuminate\Http\Request;
 
@@ -15,6 +16,7 @@ class DefaultController extends Controller
     public function __construct()
     {
         $this->middleware('auth');
+        $this->middleware('user')->only(['userDelete', 'users', 'clients']);
     }
 
     /**
@@ -24,14 +26,25 @@ class DefaultController extends Controller
      */
     public function home()
     {
-        return view('home');
+        $clientCount = User::where('role', 'client')->count();
+        $userCount = User::where('role', '!=', 'client')->count();
+        $billsCount = Bill::count();
+
+        return view('home', compact(['clientCount', 'userCount', 'billsCount']));
     }
 
     public function users()
     {
-        $users = User::paginate(20);
+        $users = User::where('role', '!=', 'client')->paginate(20);
 
-        return view('users.index', compact('users'));
+        return view('users.index', compact('users'))->with(['title' => 'Users']);
+    }
+
+    public function clients()
+    {
+        $users = User::where('role', 'client')->paginate(20);
+
+        return view('users.index', compact('users'))->with(['title' => 'Clients']);
     }
 
     public function userDelete(User $user)

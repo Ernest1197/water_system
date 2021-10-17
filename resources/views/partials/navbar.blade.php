@@ -11,8 +11,10 @@
             @auth
 			<!-- Left Side Of Navbar -->
 			<ul class="navbar-nav mr-auto">
+                <li class="nav-item"><a href="{{ route('home') }}" class="nav-link">Home</a></li>
                 <li class="nav-item"><a href="{{ route('bills.index') }}" class="nav-link">Bills</a></li>
-                @if (Auth::user()->role == 'user')
+                @if (Auth::user()->role != 'client')
+                <li class="nav-item"><a href="{{ route('users.clients') }}" class="nav-link">Clients</a></li>
                 <li class="nav-item"><a href="{{ route('users.index') }}" class="nav-link">Users</a></li>
                 @endif
 				<li class="nav-item"><a href="{{ route('users.index') }}" class="nav-link">Credits</a></li>

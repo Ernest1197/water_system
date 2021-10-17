@@ -30,11 +30,12 @@ Route::prefix('bills')->group(function () {
 });
 
 Route::prefix('users')->group(function () {
-    Route::get('/', 'DefaultController@users')->name('users.index')->middleware('user');
+    Route::get('/', 'DefaultController@users')->name('users.index');
+    Route::get('/clients', 'DefaultController@clients')->name('users.clients');
     Route::get('/create', 'DefaultController@create')->name('users.create');
     Route::post('/', 'DefaultController@store')->name('users.store');
     Route::get('/{user}', 'DefaultController@show')->name('users.show');
-    Route::get('/{user}/delete', 'DefaultController@userDelete')->name('users.destroy')->middleware('user');
+    Route::get('/{user}/delete', 'DefaultController@userDelete')->name('users.destroy');
     Route::get('/{user}/edit', 'DefaultController@edit')->name('users.edit');
     Route::put('/{user}', 'DefaultController@update')->name('users.update');
 });

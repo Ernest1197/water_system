@@ -15,7 +15,7 @@ class UserMiddleware
      */
     public function handle($request, Closure $next)
     {
-        if ($request->user()->role != 'user') {
+        if ($request->user()->role == 'client') {
             return redirect('home');
         }
 
