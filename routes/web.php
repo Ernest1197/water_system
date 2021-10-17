@@ -24,6 +24,7 @@ Route::prefix('bills')->group(function () {
     Route::get('/create', 'BillController@create')->name('bills.create');
     Route::post('/', 'BillController@store')->name('bills.store');
     Route::get('/{bill}', 'BillController@show')->name('bills.show');
+    Route::get('/{user}/bill', 'BillController@bill')->name('bills.user');
     Route::get('/{bill}/edit', 'BillController@edit')->name('bills.edit');
     Route::put('/{bill}', 'BillController@update')->name('bills.update');
     Route::delete('/{bill}', 'BillController@destroy')->name('bills.destroy');

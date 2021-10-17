@@ -26,12 +26,20 @@
 								<td>{{ $user->email }}</td>
 								<td>{{ $user->role }}</td>
                                 <td>{{ $user->meter_number }}</td>
+                                @if (Auth::user()->role != 'client')
                                 <td>
                                     <div class="btn-group">
+                                        @if ($title != 'Users')
+                                        <a href="{{ route('bills.user', $user->id) }}" class="btn btn-sm btn-warning">Bill</a>
+                                        <a href="{{ route('bills.user', $user->id) }}" class="btn btn-sm btn-success">View</a>
+                                        @endif
                                         <a href="{{ route('users.edit', $user->id) }}" class="btn btn-sm btn-primary">Edit</a>
+                                        @if (Auth::user()->role == 'admin')
                                         <a href="{{ route('users.destroy', $user->id) }}" class="btn btn-sm btn-warning">Delete</a>
+                                        @endif
                                     </div>
                                 </td>
+                                @endif
 							</tr>
                             @endforeach
 						</tbody>
