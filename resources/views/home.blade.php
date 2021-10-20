@@ -38,8 +38,30 @@
         <div class="col-md-3">
             <div class="card card-body">
                 <h1>{{ $billsCount }}</h1>
-                <p>Credits</p>
+                <p>Unpaid Bills</p>
                 <a href="{{ route('home') }}" class="btn btn-sm btn-outline-primary">View</a>
+            </div>
+        </div>
+        @else
+        <div class="col-md-3">
+            <div class="card card-body">
+                <h1>{{ $myBills }}</h1>
+                <p>My Bills</p>
+                <a href="{{ route('bills.index') }}" class="btn btn-sm btn-outline-primary">View</a>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card card-body">
+                <h1>{{ $totalConsumption }} M<sup>3</sup></h1>
+                <p>My Total Consumption</p>
+                <a href="{{ route('bills.index') }}" class="btn btn-sm btn-outline-primary">View</a>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card card-body">
+                <h1>{{ $totalBillAmount }} <small>RWF</small></h1>
+                <p>My Total Billed Amount</p>
+                <a href="{{ route('bills.index') }}" class="btn btn-sm btn-outline-primary">View</a>
             </div>
         </div>
         @endif

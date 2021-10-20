@@ -20,6 +20,7 @@ class CreateBillsTable extends Migration
             $table->double('consumption');
             $table->double('price');
             $table->double('bill_amount');
+            $table->boolean('paid')->default(false);
             $table->unsignedBigInteger('client_id');
             $table->foreign('client_id')->references('id')->on('users');
             $table->timestamps();

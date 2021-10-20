@@ -21,15 +21,20 @@ class DefaultController extends Controller
         return $user;
     }
 
+    // show home page
     public function home()
     {
         $clientCount = User::where('role', 'client')->count();
         $userCount = User::where('role', '!=', 'client')->count();
         $billsCount = Bill::count();
+        $myBills = Bill::where('client_id', auth()->id())->count();
+        $totalConsumption = Bill::where('client_id', auth()->id())->sum('consumption');
+        $totalBillAmount = Bill::where('client_id', auth()->id())->sum('bill_amount');
 
-        return view('home', compact(['clientCount', 'userCount', 'billsCount']));
+        return view('home', compact(['clientCount', 'userCount', 'billsCount', 'myBills', 'totalConsumption', 'totalBillAmount']));
     }
 
+    // show all users
     public function users()
     {
         $users = User::where('role', '!=', 'client')->paginate(20);
@@ -37,6 +42,7 @@ class DefaultController extends Controller
         return view('users.index', compact('users'))->with(['title' => 'Users']);
     }
 
+    // show all clients
     public function clients()
     {
         $users = User::where('role', 'client')->paginate(20);
@@ -44,6 +50,7 @@ class DefaultController extends Controller
         return view('users.index', compact('users'))->with(['title' => 'Clients']);
     }
 
+    // delete user
     public function userDelete(User $user)
     {
         $user->delete();
@@ -51,11 +58,13 @@ class DefaultController extends Controller
         return redirect()->route('users.index');
     }
 
+    // show update user form
     public function userEdit(User $user)
     {
         return view('users.edit', compact('user'));
     }
 
+    // save updated user
     public function userUpdate(Request $request, User $user)
     {
         try {
