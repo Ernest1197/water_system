@@ -5,7 +5,7 @@
 	<div class="row justify-content-center">
 		<div class="col-md-10">
 			<div class="card">
-				<div class="card-header">My Bills</div>
+				<div class="card-header">All Bills</div>
 				<div class="card-body">
 					<table class="table table-bordered">
 						<thead class="thead-light">
@@ -16,6 +16,7 @@
 								<th scope="col">Consumption</th>
 								<th scope="col">Price</th>
 								<th scope="col">Bill Amount</th>
+								<th scope="col">Client</th>
 								<th scope="col">Action</th>
 						  </tr>
 						</thead>
@@ -28,6 +29,7 @@
 								<td>{{ $bill->consumption }}</td>
                                 <td>{{ $bill->price }}</td>
                                 <td>{{ $bill->bill_amount }}</td>
+                                <td>{{ $bill->client->name }}</td>
                                 <td>
                                     <div class="btn-group">
                                         <a href="{{ route('bills.edit', $bill->id) }}" class="btn btn-sm btn-primary">Edit</a>

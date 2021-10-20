@@ -19,6 +19,7 @@
                 <a href="{{ route('users.clients') }}" class="btn btn-sm btn-outline-primary">View</a>
             </div>
         </div>
+        @if (Auth::user()->role == "admin")
         <div class="col-md-3">
             <div class="card card-body">
                 <h1>{{ $userCount }}</h1>
@@ -26,6 +27,7 @@
                 <a href="{{ route('users.index') }}" class="btn btn-sm btn-outline-primary">View</a>
             </div>
         </div>
+        @endif
         <div class="col-md-3">
             <div class="card card-body">
                 <h1>{{ $billsCount }}</h1>

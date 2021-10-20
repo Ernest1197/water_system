@@ -40,6 +40,22 @@
                         </div>
 
                         <div class="form-group row">
+                            <label for="meter_number" class="col-md-4 col-form-label text-md-right">{{ __('Meter Number') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="meter_number" type="text" class="form-control" name="meter_number">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="first_meter_reading" class="col-md-4 col-form-label text-md-right">{{ __('First Meter Reading') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="first_meter_reading" type="text" class="form-control" name="first_meter_reading">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
                             <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
 
                             <div class="col-md-6">

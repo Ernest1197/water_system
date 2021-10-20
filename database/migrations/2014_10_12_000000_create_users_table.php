@@ -19,9 +19,9 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->enum('role',['client','user','admin',])->default('client');
+            $table->enum('role', ['client', 'user', 'admin',])->default('client');
             $table->string('meter_number')->unique()->nullable();
-            $table->string('first_meter_reading')->unique()->nullable();
+            $table->double('first_meter_reading')->unique()->nullable();
             $table->string('contact')->unique()->nullable();
             $table->string('address')->unique()->nullable();
             $table->rememberToken();

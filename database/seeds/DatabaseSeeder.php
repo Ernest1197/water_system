@@ -29,7 +29,7 @@ class DatabaseSeeder extends Seeder
                 'password' => Hash::make('password'),
                 'role' => 'client',
                 'meter_number' => '0001',
-                'first_meter_reading' => '1234',
+                'first_meter_reading' => '50',
                 'contact' => '071892395',
                 'address' => 'mu rugo'
             ], [

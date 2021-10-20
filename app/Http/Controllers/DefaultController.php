@@ -5,25 +5,22 @@ namespace App\Http\Controllers;
 use App\Bill;
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Database\QueryException;
 
 class DefaultController extends Controller
 {
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
     public function __construct()
     {
         $this->middleware('auth');
         $this->middleware('user')->only(['userDelete', 'users', 'clients']);
+        $this->middleware('admin')->only(['users', 'userEdit', 'userUpdate']);
     }
 
-    /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Contracts\Support\Renderable
-     */
+    public function show(User $user)
+    {
+        return $user;
+    }
+
     public function home()
     {
         $clientCount = User::where('role', 'client')->count();
@@ -52,5 +49,27 @@ class DefaultController extends Controller
         $user->delete();
 
         return redirect()->route('users.index');
+    }
+
+    public function userEdit(User $user)
+    {
+        return view('users.edit', compact('user'));
+    }
+
+    public function userUpdate(Request $request, User $user)
+    {
+        try {
+            $user->update([
+                'name' => $request->input('name'),
+                'email' => $request->input('email'),
+                'meter_number' => $request->input('meter_number'),
+                'first_meter_reading' => $request->input('first_meter_reading'),
+                'role' => $request->input('role'),
+            ]);
+        } catch (QueryException $e) {
+            abort(500);
+        }
+
+        return redirect()->back();
     }
 }

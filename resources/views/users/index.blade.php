@@ -14,7 +14,10 @@
 								<th scope="col">Name</th>
 								<th scope="col">Email</th>
 								<th scope="col">Role</th>
-								<th scope="col">Meter Number</th>
+                                @if ($title == 'Clients')
+                                <th scope="col">Meter Number</th>
+                                <th scope="col">First Meter Reading</th>
+                                @endif
 								<th scope="col">Action</th>
 						  </tr>
 						</thead>
@@ -25,17 +28,20 @@
 								<td>{{ $user->name }}</td>
 								<td>{{ $user->email }}</td>
 								<td>{{ $user->role }}</td>
+                                @if ($title == 'Clients')
                                 <td>{{ $user->meter_number }}</td>
+                                <td>{{ $user->first_meter_reading }}</td>
+                                @endif
                                 @if (Auth::user()->role != 'client')
                                 <td>
                                     <div class="btn-group">
                                         @if ($title != 'Users')
-                                        <a href="{{ route('bills.user', $user->id) }}" class="btn btn-sm btn-warning">Bill</a>
-                                        <a href="{{ route('bills.user', $user->id) }}" class="btn btn-sm btn-success">View</a>
+                                        <a href="{{ route('bills.user', $user->id) }}" class="btn btn-sm btn-warning">Add Bill</a>
+                                        <a href="{{ route('bills.show', $user->id) }}" class="btn btn-sm btn-success">View Bills</a>
                                         @endif
                                         <a href="{{ route('users.edit', $user->id) }}" class="btn btn-sm btn-primary">Edit</a>
                                         @if (Auth::user()->role == 'admin')
-                                        <a href="{{ route('users.destroy', $user->id) }}" class="btn btn-sm btn-warning">Delete</a>
+                                        <a href="{{ route('users.destroy', $user->id) }}" class="btn btn-sm btn-danger">Delete</a>
                                         @endif
                                     </div>
                                 </td>
