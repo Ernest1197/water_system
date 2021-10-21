@@ -81,4 +81,9 @@ class DefaultController extends Controller
 
         return redirect()->back();
     }
+
+    public function stats()
+    {
+        return Bill::all();
+    }
 }

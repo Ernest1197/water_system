@@ -1,7 +1,7 @@
-<nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+<nav class="navbar navbar-expand-md navbar-light bg-light shadow-sm">
 	<div class="container">
-		<a class="navbar-brand" href="{{ url('/') }}">
-			{{ config('app.name', 'Laravel') }}
+		<a class="navbar-brand text-uppercase font-weight-bold" href="{{ url('/') }}">
+            <span class='text-primary'>Water</span> Management <span class='text-primary'>System</span>
 		</a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
 			<span class="navbar-toggler-icon"></span>

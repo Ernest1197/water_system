@@ -18,6 +18,7 @@ Route::get('/', function () {
 });
 
 Route::get('/home', 'DefaultController@home')->name('home');
+Route::get('/stats', 'DefaultController@stats')->name('stats');
 
 Route::prefix('bills')->group(function () {
     Route::get('/', 'BillController@index')->name('bills.index');
