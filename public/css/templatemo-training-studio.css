@@ -849,10 +849,10 @@ Our Classes
     font-size: 19px;
     letter-spacing: 0.5px;
     font-weight: 600;
-    background-color: skyblue;
+    background-color: #0082c8;
 }
 #tabs .main-rounded-button a:hover {
-    background-color: #f9735b;
+    background-color: skyblue;
 }
 #tabs ul li a img {
     max-width: 100%;
@@ -865,7 +865,7 @@ Our Classes
     border-bottom: none;
 }
 #tabs ul .ui-tabs-active a {
-    color: skyblue;
+    color: #0082c8;
 }
 #tabs ul .ui-tabs-active span {
     color: #1e1e1e;
