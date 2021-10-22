@@ -13,7 +13,7 @@
         </div>
         @if (Auth::user()->role != "client")
 		<div class="col-md-3">
-            <div class="card card-body">
+            <div class="card card-body shadow border-0 mb-2">
                 <h1>{{ $clientCount }}</h1>
                 <p>Clients</p>
                 <a href="{{ route('users.clients') }}" class="btn btn-sm btn-outline-primary">View</a>
@@ -21,7 +21,7 @@
         </div>
         @if (Auth::user()->role == "admin")
         <div class="col-md-3">
-            <div class="card card-body">
+            <div class="card card-body shadow border-0 mb-2">
                 <h1>{{ $userCount }}</h1>
                 <p>Users</p>
                 <a href="{{ route('users.index') }}" class="btn btn-sm btn-outline-primary">View</a>
@@ -29,14 +29,14 @@
         </div>
         @endif
         <div class="col-md-3">
-            <div class="card card-body">
+            <div class="card card-body shadow border-0 mb-2">
                 <h1>{{ $billsCount }}</h1>
                 <p>Bills</p>
                 <a href="{{ route('home') }}" class="btn btn-sm btn-outline-primary">View</a>
             </div>
         </div>
         <div class="col-md-3">
-            <div class="card card-body">
+            <div class="card card-body shadow border-0 mb-2">
                 <h1>{{ $billsCount }}</h1>
                 <p>Unpaid Bills</p>
                 <a href="{{ route('home') }}" class="btn btn-sm btn-outline-primary">View</a>
@@ -44,21 +44,21 @@
         </div>
         @else
         <div class="col-md-3">
-            <div class="card card-body">
+            <div class="card card-body shadow border-0 mb-2">
                 <h1>{{ $myBills }}</h1>
                 <p>My Bills</p>
                 <a href="{{ route('bills.index') }}" class="btn btn-sm btn-outline-primary">View</a>
             </div>
         </div>
         <div class="col-md-3">
-            <div class="card card-body">
+            <div class="card card-body shadow border-0 mb-2">
                 <h1>{{ $totalConsumption }} M<sup>3</sup></h1>
                 <p>My Total Consumption</p>
                 <a href="{{ route('bills.index') }}" class="btn btn-sm btn-outline-primary">View</a>
             </div>
         </div>
         <div class="col-md-3">
-            <div class="card card-body">
+            <div class="card card-body shadow border-0 mb-2">
                 <h1>{{ $totalBillAmount }} <small>RWF</small></h1>
                 <p>My Total Billed Amount</p>
                 <a href="{{ route('bills.index') }}" class="btn btn-sm btn-outline-primary">View</a>
