@@ -23,15 +23,15 @@
                             </tr>
                             </thead>
                             <tbody>
-                                @foreach($users as $user)
+                                @foreach($users as $key => $user)
                                 <tr>
-                                    <th scope="row">{{ $user->id }}</th>
+                                    <th scope="row">{{ $key + 1 }}</th>
                                     <td>{{ $user->name }}</td>
                                     <td>{{ $user->email }}</td>
                                     <td>{{ $user->role }}</td>
                                     @if ($title == 'Clients')
                                     <td>{{ $user->meter_number }}</td>
-                                    <td>{{ $user->first_meter_reading }}</td>
+                                    <td>{{ number_format($user->first_meter_reading, 2) }} M<sup>3</sup></td>
                                     @endif
                                     @if (Auth::user()->role != 'client')
                                     <td>

@@ -26,9 +26,20 @@ Route::prefix('bills')->group(function () {
     Route::post('/', 'BillController@store')->name('bills.store');
     Route::get('/{user}', 'BillController@show')->name('bills.show');
     Route::get('/{user}/bill', 'BillController@bill')->name('bills.user');
+    Route::get('/{bill}/delete', 'BillController@delete')->name('bills.delete');
     Route::get('/{bill}/edit', 'BillController@edit')->name('bills.edit');
     Route::put('/{bill}', 'BillController@update')->name('bills.update');
-    Route::get('/{bill}/delete', 'BillController@delete')->name('bills.delete');
+});
+
+Route::prefix('payments')->group(function () {
+    Route::get('/', 'PaymentController@index')->name('payments.index');
+    Route::get('/create', 'PaymentController@create')->name('payments.create');
+    Route::post('/', 'PaymentController@store')->name('payments.store');
+    Route::get('/{user}', 'PaymentController@show')->name('payments.show');
+    Route::get('/{user}/bill', 'PaymentController@bill')->name('payments.user');
+    Route::get('/{bill}/delete', 'PaymentController@delete')->name('payments.delete');
+    Route::get('/{bill}/edit', 'PaymentController@edit')->name('payments.edit');
+    Route::put('/{bill}', 'PaymentController@update')->name('payments.update');
 });
 
 Route::prefix('users')->group(function () {

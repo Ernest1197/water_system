@@ -4,6 +4,16 @@ link: https://water-calculator1.herokuapp.com/
 
 ## TODO
 
--   [ ] unpaid bills
--   [ ] edit bill
+-   BILL
+
+    -   [ ] unpaid bills
+    -   [ ] edit & update
+    -   [ ] pay now
+
+-   Show error message
+
+    -   [ ] register
+    -   [ ] add bill
+
 -   [ ] payment
+-   [ ] settings

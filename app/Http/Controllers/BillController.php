@@ -33,7 +33,7 @@ class BillController extends Controller
     public function show(User $user)
     {
         $bills = Bill::latest()->where('client_id', $user->id)->paginate(20);
-        return view('bills.index', compact('bills'));
+        return view('bills.index', compact('bills', 'user'));
     }
 
     // add bill to user

@@ -5,7 +5,7 @@
 	<div class="row justify-content-center">
 		<div class="col">
 			<div class="card">
-				<div class="card-header">All Bills</div>
+				<div class="card-header">{{ isset($user) ? $user->name . ' (bills)' : 'All Bills' }}</div>
 				<div class="card-body">
                     <div class="table-responsive">
                         <table class="table table-bordered">
@@ -22,14 +22,14 @@
                             </tr>
                             </thead>
                             <tbody>
-                                @foreach($bills as $bill)
+                                @foreach($bills as $key => $bill)
                                 <tr>
-                                    <th scope="row">{{ $bill->id }}</th>
-                                    <td>{{ $bill->previous_reading }}</td>
-                                    <td>{{ $bill->present_reading }}</td>
-                                    <td>{{ $bill->consumption }}</td>
-                                    <td>{{ $bill->price }} RWF</td>
-                                    <td>{{ $bill->bill_amount }} RWF</td>
+                                    <th scope="row">{{ $key + 1 }}</th>
+                                    <td>{{ number_format($bill->previous_reading, 2) }} M<sup>3</sup></td>
+                                    <td>{{ number_format($bill->present_reading, 2) }} M<sup>3</sup></td>
+                                    <td>{{ number_format($bill->consumption, 2) }} M<sup>3</sup></td>
+                                    <td>{{ number_format($bill->price) }} RWF</td>
+                                    <td>{{ number_format($bill->bill_amount) }} RWF</td>
                                     <td>{{ $bill->client->name }}</td>
                                     <td>
                                         <div class="btn-group">
