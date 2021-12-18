@@ -4,4 +4,6 @@ link: https://water-calculator1.herokuapp.com/
 
 ## TODO
 
--   payment
+-   [ ] unpaid bills
+-   [ ] edit bill
+-   [ ] payment

@@ -11,14 +11,14 @@
                         <table class="table table-bordered">
                             <thead class="thead-light">
                             <tr>
-                                    <th scope="col">#</th>
-                                    <th scope="col">Previous Reading</th>
-                                    <th scope="col">Present Reading</th>
-                                    <th scope="col">Consumption</th>
-                                    <th scope="col">Price</th>
-                                    <th scope="col">Bill Amount</th>
-                                    <th scope="col">Client</th>
-                                    <th scope="col">Action</th>
+                                <th scope="col">#</th>
+                                <th scope="col">Previous Reading</th>
+                                <th scope="col">Present Reading</th>
+                                <th scope="col">Consumption</th>
+                                <th scope="col">Price</th>
+                                <th scope="col">Bill Amount</th>
+                                <th scope="col">Client</th>
+                                <th scope="col">Action</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -35,7 +35,7 @@
                                         <div class="btn-group">
                                             @if (Auth::user()->role != 'client')
                                             <a href="{{ route('bills.edit', $bill->id) }}" class="btn btn-sm btn-primary">Edit</a>
-                                            <a href="{{ route('bills.destroy', $bill->id) }}" class="btn btn-sm btn-warning">Delete</a>
+                                            <a href="{{ route('bills.delete', $bill->id) }}" class="btn btn-sm btn-warning">Delete</a>
                                             @else
                                             <a href="#" class="btn btn-sm btn-secondary">Pay Now</a>
                                             @endif

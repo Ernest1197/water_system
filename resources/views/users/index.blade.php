@@ -39,10 +39,9 @@
                                             @if ($title != 'Users')
                                             <a href="{{ route('bills.user', $user->id) }}" class="btn btn-sm btn-warning">Add Bill</a>
                                             <a href="{{ route('bills.show', $user->id) }}" class="btn btn-sm btn-success">View Bills</a>
-                                            @endif
+                                            @endif @if (Auth::user()->role == 'admin')
                                             <a href="{{ route('users.edit', $user->id) }}" class="btn btn-sm btn-primary">Edit</a>
-                                            @if (Auth::user()->role == 'admin')
-                                            <a href="{{ route('users.destroy', $user->id) }}" class="btn btn-sm btn-danger">Delete</a>
+                                            <a href="{{ route('users.delete', $user->id) }}" class="btn btn-sm btn-danger">Delete</a>
                                             @endif
                                         </div>
                                     </td>

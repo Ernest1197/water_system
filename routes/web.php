@@ -28,7 +28,7 @@ Route::prefix('bills')->group(function () {
     Route::get('/{user}/bill', 'BillController@bill')->name('bills.user');
     Route::get('/{bill}/edit', 'BillController@edit')->name('bills.edit');
     Route::put('/{bill}', 'BillController@update')->name('bills.update');
-    Route::delete('/{bill}', 'BillController@destroy')->name('bills.destroy');
+    Route::get('/{bill}/delete', 'BillController@delete')->name('bills.delete');
 });
 
 Route::prefix('users')->group(function () {
@@ -37,7 +37,7 @@ Route::prefix('users')->group(function () {
     Route::get('/create', 'DefaultController@create')->name('users.create');
     Route::post('/', 'DefaultController@store')->name('users.store');
     Route::get('/{user}', 'DefaultController@show')->name('users.show');
-    Route::get('/{user}/delete', 'DefaultController@userDelete')->name('users.destroy');
+    Route::get('/{user}/delete', 'DefaultController@userDelete')->name('users.delete');
     Route::get('/{user}/edit', 'DefaultController@userEdit')->name('users.edit');
     Route::put('/{user}', 'DefaultController@userUpdate')->name('users.update');
 });

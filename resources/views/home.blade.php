@@ -32,14 +32,14 @@
             <div class="card card-body shadow border-0 mb-2">
                 <h1>{{ $billsCount }}</h1>
                 <p>Bills</p>
-                <a href="{{ route('home') }}" class="btn btn-sm btn-outline-primary">View</a>
+                <a href="{{ route('bills.index') }}" class="btn btn-sm btn-outline-primary">View</a>
             </div>
         </div>
         <div class="col-md-3">
             <div class="card card-body shadow border-0 mb-2">
                 <h1>{{ $billsCount }}</h1>
                 <p>Unpaid Bills</p>
-                <a href="{{ route('home') }}" class="btn btn-sm btn-outline-primary">View</a>
+                <a href="{{ route('bills.index') }}" class="btn btn-sm btn-outline-primary">View</a>
             </div>
         </div>
         @else
