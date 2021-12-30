@@ -68,7 +68,7 @@
 			redirect_url: '#',
 			customer: {
 				email: "{{ Auth::user()->email }}",
-				phone_number: "08102909304",
+				phone_number: "{{ Auth::user()->contact }}",
 				name: "{{ Auth::user()->name }}",
 			},
 			customizations: {
