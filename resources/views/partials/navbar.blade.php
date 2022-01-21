@@ -13,7 +13,7 @@
 			<ul class="navbar-nav mr-auto">
                 <li class="nav-item"><a href="{{ route('home') }}" class="nav-link">Home</a></li>
                 <li class="nav-item"><a href="{{ route('bills.index') }}" class="nav-link">Bills</a></li>
-                <li class="nav-item"><a href="{{ route('bills.index') }}" class="nav-link">Unpaid Bills</a></li>
+                <li class="nav-item"><a href="{{ route('bills.unpaid') }}" class="nav-link">Unpaid Bills</a></li>
                 @if (Auth::user()->role != 'client')
                 <li class="nav-item"><a href="{{ route('users.clients') }}" class="nav-link">Clients</a></li>
                 @endif

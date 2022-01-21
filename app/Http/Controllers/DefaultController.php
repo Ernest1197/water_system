@@ -27,11 +27,12 @@ class DefaultController extends Controller
         $clientCount = User::where('role', 'client')->count();
         $userCount = User::where('role', '!=', 'client')->count();
         $billsCount = Bill::count();
+        $unpaidBillsCount = Bill::where('paid', false)->count();
         $myBills = Bill::where('client_id', auth()->id())->count();
         $totalConsumption = Bill::where('client_id', auth()->id())->sum('consumption');
         $totalBillAmount = Bill::where('client_id', auth()->id())->sum('bill_amount');
 
-        return view('home', compact(['clientCount', 'userCount', 'billsCount', 'myBills', 'totalConsumption', 'totalBillAmount']));
+        return view('home', compact(['clientCount', 'userCount', 'billsCount', 'myBills', 'totalConsumption', 'totalBillAmount', 'unpaidBillsCount']));
     }
 
     // show all users

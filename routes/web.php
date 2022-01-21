@@ -23,6 +23,8 @@ Route::get('/stats', 'DefaultController@stats')->name('stats');
 Route::prefix('bills')->group(function () {
     Route::get('/', 'BillController@index')->name('bills.index');
     Route::get('/create', 'BillController@create')->name('bills.create');
+    Route::get('/pay', 'BillController@pay')->name('bills.pay');
+    Route::get('/unpaid', 'BillController@unpaid')->name('bills.unpaid');
     Route::post('/', 'BillController@store')->name('bills.store');
     Route::get('/{user}', 'BillController@show')->name('bills.show');
     Route::get('/{user}/bill', 'BillController@bill')->name('bills.user');
