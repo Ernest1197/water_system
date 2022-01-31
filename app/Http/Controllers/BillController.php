@@ -44,6 +44,7 @@ class BillController extends Controller
         return view('bills.index', compact('bills'));
     }
 
+    // save payment from flutterwave
     public function pay(Request $request) {
         if ($request->status === 'successful') {
             $bill = Bill::findOrFail(ltrim($request->tx_ref, 'water-bill-'));

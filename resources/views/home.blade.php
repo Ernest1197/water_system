@@ -9,7 +9,7 @@
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                   <span aria-hidden="true">&times;</span>
                 </button>
-              </div>
+            </div>
         </div>
         @if (Auth::user()->role != "client")
 		<div class="col-md-3">
@@ -30,14 +30,14 @@
         @endif
         <div class="col-md-3">
             <div class="card card-body shadow border-0 mb-2">
-                <h1>{{ $billsCount }}</h1>
+                <h1>{{ number_format($billsCount) }}</h1>
                 <p>Bills</p>
                 <a href="{{ route('bills.index') }}" class="btn btn-sm btn-outline-primary">View</a>
             </div>
         </div>
         <div class="col-md-3">
             <div class="card card-body shadow border-0 mb-2">
-                <h1>{{ $unpaidBillsCount }}</h1>
+                <h1>{{ number_format($unpaidBillsCount) }}</h1>
                 <p>Unpaid Bills</p>
                 <a href="{{ route('bills.unpaid') }}" class="btn btn-sm btn-outline-primary">View</a>
             </div>
@@ -45,21 +45,21 @@
         @else
         <div class="col-md-3">
             <div class="card card-body shadow border-0 mb-2">
-                <h1>{{ $myBills }}</h1>
+                <h1>{{ number_format($myBills) }}</h1>
                 <p>My Bills</p>
                 <a href="{{ route('bills.index') }}" class="btn btn-sm btn-outline-primary">View</a>
             </div>
         </div>
         <div class="col-md-3">
             <div class="card card-body shadow border-0 mb-2">
-                <h1>{{ $totalConsumption }} M<sup>3</sup></h1>
+                <h1>{{ number_format($totalConsumption) }} M<sup>3</sup></h1>
                 <p>My Total Consumption</p>
                 <a href="{{ route('bills.index') }}" class="btn btn-sm btn-outline-primary">View</a>
             </div>
         </div>
         <div class="col-md-3">
             <div class="card card-body shadow border-0 mb-2">
-                <h1>{{ $totalBillAmount }} <small>RWF</small></h1>
+                <h1>{{ number_format($totalBillAmount) }} <small>RWF</small></h1>
                 <p>My Total Billed Amount</p>
                 <a href="{{ route('bills.index') }}" class="btn btn-sm btn-outline-primary">View</a>
             </div>
