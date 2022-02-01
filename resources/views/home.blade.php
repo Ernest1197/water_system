@@ -3,14 +3,6 @@
 @section('content')
 <div class="container">
 	<div class="row justify-content-center">
-        <div class="col-md-12">
-            <div class="alert alert-success alert-dismissible fade show" role="alert">
-                Welcome back <b>{{ Auth::user()->name }}</b>
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-        </div>
         @if (Auth::user()->role != "client")
 		<div class="col-md-3">
             <div class="card card-body shadow border-0 mb-2">

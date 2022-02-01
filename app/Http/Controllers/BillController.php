@@ -86,7 +86,8 @@ class BillController extends Controller
         $consumption = (float) $request->input('present_reading') - (float) $request->input('previous_reading');
         $price = (float) $request->input('price');
 
-        if ($consumption <= 0) return redirect()->back();
+        if ($consumption <= 0)
+            return back()->withErrors(['present_reading' => 'Present reading should be more than previous reading']);
 
         Bill::create([
             'previous_reading' => $request->input('previous_reading'),

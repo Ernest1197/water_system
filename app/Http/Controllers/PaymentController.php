@@ -14,7 +14,6 @@ class PaymentController extends Controller
     // show all bills
     public function index() {
         $payments = Payment::latest()->with(['client', 'bill'])->paginate(20);
-
-        return $payments; // view('payments.index', compact('payments'));
+        return view('payments.index', compact('payments'));
     }
 }
