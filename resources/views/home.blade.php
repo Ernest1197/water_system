@@ -57,6 +57,61 @@
             </div>
         </div>
         @endif
+        <div class="col-md-12 mt-5"><canvas id="chart"></canvas></div>
 	</div>
 </div>
+@endsection
+
+@section('scripts')
+<script src="{{ asset('js/chart.min.js') }}"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const thisChart = document.getElementById("chart").getContext("2d");
+    const backgroundColor = [
+        "rgba(255, 99, 132, 0.2)",
+        "rgba(54, 162, 235, 0.2)",
+        "rgba(255, 206, 86, 0.2)",
+        "rgba(75, 192, 192, 0.2)",
+        "rgba(153, 102, 255, 0.2)",
+        "rgba(255, 159, 64, 0.2)",
+    ];
+    const borderColor = [
+        "rgba(255, 99, 132, 1)",
+        "rgba(54, 162, 235, 1)",
+        "rgba(255, 206, 86, 1)",
+        "rgba(75, 192, 192, 1)",
+        "rgba(153, 102, 255, 1)",
+        "rgba(255, 159, 64, 1)",
+    ];
+
+    fetch("/stats")
+    .then((res) => res.json())
+    .then((data) => {
+        const myLabels = [];
+        const myData = [];
+
+        data.reverse().map((item) => {
+        myLabels.push(item.client.name);
+        myData.push(item.consumption);
+        });
+
+        new Chart(thisChart, {
+        type: "bar",
+        options: { scales: { y: { beginAtZero: true } } },
+        data: {
+            labels: myLabels,
+            datasets: [
+            {
+                label: "Water Consumption Statistics",
+                data: myData,
+                backgroundColor,
+                borderColor,
+                borderWidth: 1,
+            },
+            ],
+        },
+        });
+    });
+});
+</script>
 @endsection

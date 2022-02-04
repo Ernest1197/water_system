@@ -85,6 +85,7 @@ class DefaultController extends Controller
 
     public function stats()
     {
-        return Bill::all();
+        if (auth()->user()->role != 'client') return Bill::latest()->with('client')->limit(100)->get();
+        else return Bill::where('client_id', auth()->id())->latest()->with('client')->limit(100)->get();
     }
 }

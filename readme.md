@@ -4,6 +4,8 @@ link: https://water-calculator1.herokuapp.com/
 
 ## TODO
 
+-   [ ] Arduino API route: /api/save-bill
+
 -   BILL
 
     -   [x] unpaid bills

@@ -11,8 +11,8 @@ class BillController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth');
-        $this->middleware('user')->only(['store']); // client not allowed to create bill
+        $this->middleware('auth')->except(['save']);
+        $this->middleware('user')->except(['save'])->only(['store']); // client not allowed to create bill
     }
 
     // show unpaid bills
@@ -82,12 +82,19 @@ class BillController extends Controller
     // save bill
     public function store(Request $request)
     {
-        $request->validate(['previous_reading' => 'required', 'present_reading' => 'required', 'price' => 'required']);
+        $request->validate([
+            'previous_reading' => 'required',
+            'present_reading' => 'required',
+            'price' => 'required'
+        ]);
+
         $consumption = (float) $request->input('present_reading') - (float) $request->input('previous_reading');
         $price = (float) $request->input('price');
 
         if ($consumption <= 0)
-            return back()->withErrors(['present_reading' => 'Present reading should be more than previous reading']);
+            return back()->withErrors([
+                'present_reading' => 'Present reading should be more than previous reading'
+                ]);
 
         Bill::create([
             'previous_reading' => $request->input('previous_reading'),
@@ -99,5 +106,37 @@ class BillController extends Controller
         ]);
 
         return redirect()->route('bills.index');
+    }
+
+    // API save bill
+    public function save(Request $request)
+    {
+        dd ([
+            'info:' => 'Arduino API, provide the following information...',
+            'required fields:' => ['previous_reading', 'present_reading', 'consumption', 'client_id', 'price']
+            ]);
+        
+        $request->validate([
+            'previous_reading' => 'required',
+            'present_reading' => 'required',
+            'price' => 'required'
+        ]);
+
+        $consumption = (float) $request->input('present_reading') - (float) $request->input('previous_reading');
+        $price = (float) $request->input('price');
+
+        if ($consumption <= 0)
+            return 'Present reading should be more than previous reading';
+
+        $bill = Bill::create([
+            'previous_reading' => $request->input('previous_reading'),
+            'present_reading' => $request->input('present_reading'),
+            'consumption' => $consumption,
+            'price' => $price,
+            'bill_amount' => $consumption * $price,
+            'client_id' => $request->input('client_id')
+        ]);
+
+        return $bill;
     }
 }

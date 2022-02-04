@@ -20,6 +20,10 @@ Route::get('/', function () {
 Route::get('/home', 'DefaultController@home')->name('home');
 Route::get('/stats', 'DefaultController@stats')->name('stats');
 
+Route::prefix('api')->group(function () {
+    Route::get('/save-bill', 'BillController@save')->name('bills.save');
+});
+
 Route::prefix('bills')->group(function () {
     Route::get('/', 'BillController@index')->name('bills.index');
     Route::get('/create', 'BillController@create')->name('bills.create');

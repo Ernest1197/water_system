@@ -43,7 +43,13 @@
                             <label for="meter_number" class="col-md-4 col-form-label text-md-right">{{ __('POC / Numero y\' ifatabuguzi') }}</label>
 
                             <div class="col-md-6">
-                                <input id="meter_number" type="text" class="form-control" name="meter_number">
+                                <input id="meter_number" type="text" class="form-control @error('meter_number') is-invalid @enderror" name="meter_number" value="{{ old('meter_number') }}" required>
+
+                                @error('meter_number')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
                             </div>
                         </div>
 
