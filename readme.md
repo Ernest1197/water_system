@@ -1,6 +1,6 @@
 # Water Calculator
 
-link: https://water-calculator1.herokuapp.com/
+link: https://water-billing-system-2022.herokuapp.com/
 
 ## TODO
 
