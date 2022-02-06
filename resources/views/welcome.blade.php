@@ -13,11 +13,11 @@
 	<title>Water Management System</title>
 
 	<!-- Additional CSS Files -->
-	<link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap.min.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ secure_asset('css/bootstrap.min.css') }}">
 
-	<link rel="stylesheet" type="text/css" href="{{ asset('css/font-awesome.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ secure_asset('css/font-awesome.css') }}">
 
-	<link rel="stylesheet" href="{{ asset('css/templatemo-training-studio.css') }}">
+	<link rel="stylesheet" href="{{ secure_asset('css/templatemo-training-studio.css') }}">
 
 	</head>
 
@@ -59,7 +59,7 @@
     <!-- ***** Main Banner Area Start ***** -->
     <div class="main-banner" id="top">
         <video autoplay muted loop id="bg-video">
-            <source src="assets/images/gym-video.mp4" type="video/mp4" />
+            <source src="secure_assets/images/gym-video.mp4" type="video/mp4" />
         </video>
 
         <div class="video-overlay header-text">
@@ -81,7 +81,7 @@
 				<div class="col-lg-6 offset-lg-3">
 					<div class="section-heading">
 						<h2>Choose <em>Program</em></h2>
-						<img src="{{ asset('images/line-dec.png') }}" alt="waves">
+						<img src="{{ secure_asset('images/line-dec.png') }}" alt="waves">
 						<p>Training Studio is free CSS template for gyms and fitness centers. You are allowed to use this layout for your business website.</p>
 					</div>
 				</div>
@@ -89,7 +89,7 @@
 					<ul class="features-items">
 						<li class="feature-item">
 							<div class="left-icon">
-								<img src="{{ asset('images/features-first-icon.png') }}" alt="First One">
+								<img src="{{ secure_asset('images/features-first-icon.png') }}" alt="First One">
 							</div>
 							<div class="right-content">
 								<h4>Basic Fitness</h4>
@@ -99,7 +99,7 @@
 						</li>
 						<li class="feature-item">
 							<div class="left-icon">
-								<img src="{{ asset('images/features-first-icon.png') }}" alt="second one">
+								<img src="{{ secure_asset('images/features-first-icon.png') }}" alt="second one">
 							</div>
 							<div class="right-content">
 								<h4>New Gym Training</h4>
@@ -109,7 +109,7 @@
 						</li>
 						<li class="feature-item">
 							<div class="left-icon">
-								<img src="{{ asset('images/features-first-icon.png') }}" alt="third gym training">
+								<img src="{{ secure_asset('images/features-first-icon.png') }}" alt="third gym training">
 							</div>
 							<div class="right-content">
 								<h4>Basic Muscle Course</h4>
@@ -123,7 +123,7 @@
 					<ul class="features-items">
 						<li class="feature-item">
 							<div class="left-icon">
-								<img src="{{ asset('images/features-first-icon.png') }}" alt="fourth muscle">
+								<img src="{{ secure_asset('images/features-first-icon.png') }}" alt="fourth muscle">
 							</div>
 							<div class="right-content">
 								<h4>Advanced Muscle Course</h4>
@@ -133,7 +133,7 @@
 						</li>
 						<li class="feature-item">
 							<div class="left-icon">
-								<img src="{{ asset('images/features-first-icon.png') }}" alt="training fifth">
+								<img src="{{ secure_asset('images/features-first-icon.png') }}" alt="training fifth">
 							</div>
 							<div class="right-content">
 								<h4>Yoga Training</h4>
@@ -143,7 +143,7 @@
 						</li>
 						<li class="feature-item">
 							<div class="left-icon">
-								<img src="{{ asset('images/features-first-icon.png') }}" alt="gym training">
+								<img src="{{ secure_asset('images/features-first-icon.png') }}" alt="gym training">
 							</div>
 							<div class="right-content">
 								<h4>Body Building Course</h4>
@@ -183,7 +183,7 @@
                 <div class="col-lg-6 offset-lg-3">
                     <div class="section-heading">
                         <h2>Our <em>Classes</em></h2>
-                        <img src="{{ asset('images/line-dec.png') }}" alt="">
+                        <img src="{{ secure_asset('images/line-dec.png') }}" alt="">
                         <p>Nunc urna sem, laoreet ut metus id, aliquet consequat magna. Sed viverra ipsum dolor, ultricies fermentum massa consequat eu.</p>
                     </div>
                 </div>
@@ -191,17 +191,17 @@
             <div class="row" id="tabs">
               <div class="col-lg-4">
                 <ul>
-                  <li><a href='#tabs-1'><img src="{{ asset('images/tabs-first-icon.png') }}" alt="">First Training Class</a></li>
-                  <li><a href='#tabs-2'><img src="{{ asset('images/tabs-first-icon.png') }}" alt="">Second Training Class</a></a></li>
-                  <li><a href='#tabs-3'><img src="{{ asset('images/tabs-first-icon.png') }}" alt="">Third Training Class</a></a></li>
-                  <li><a href='#tabs-4'><img src="{{ asset('images/tabs-first-icon.png') }}" alt="">Fourth Training Class</a></a></li>
+                  <li><a href='#tabs-1'><img src="{{ secure_asset('images/tabs-first-icon.png') }}" alt="">First Training Class</a></li>
+                  <li><a href='#tabs-2'><img src="{{ secure_asset('images/tabs-first-icon.png') }}" alt="">Second Training Class</a></a></li>
+                  <li><a href='#tabs-3'><img src="{{ secure_asset('images/tabs-first-icon.png') }}" alt="">Third Training Class</a></a></li>
+                  <li><a href='#tabs-4'><img src="{{ secure_asset('images/tabs-first-icon.png') }}" alt="">Fourth Training Class</a></a></li>
                   <div class="main-rounded-button"><a href="#">View All Schedules</a></div>
                 </ul>
               </div>
               <div class="col-lg-8">
                 <section class='tabs-content'>
                   <article id='tabs-1'>
-                    <img src="{{ asset('images/training-image-01.jpg') }}" alt="First Class">
+                    <img src="{{ secure_asset('images/training-image-01.jpg') }}" alt="First Class">
                     <h4>First Training Class</h4>
                     <p>Phasellus convallis mauris sed elementum vulputate. Donec posuere leo sed dui eleifend hendrerit. Sed suscipit suscipit erat, sed vehicula ligula. Aliquam ut sem fermentum sem tincidunt lacinia gravida aliquam nunc. Morbi quis erat imperdiet, molestie nunc ut, accumsan diam.</p>
                     <div class="main-button">
@@ -209,7 +209,7 @@
                     </div>
                   </article>
                   <article id='tabs-2'>
-                    <img src="{{ asset('images/training-image-02.jpg') }}" alt="Second Training">
+                    <img src="{{ secure_asset('images/training-image-02.jpg') }}" alt="Second Training">
                     <h4>Second Training Class</h4>
                     <p>Integer dapibus, est vel dapibus mattis, sem mauris luctus leo, ac pulvinar quam tortor a velit. Praesent ultrices erat ante, in ultricies augue ultricies faucibus. Nam tellus nibh, ullamcorper at mattis non, rhoncus sed massa. Cras quis pulvinar eros. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
                     <div class="main-button">
@@ -217,7 +217,7 @@
                     </div>
                   </article>
                   <article id='tabs-3'>
-                    <img src="{{ asset('images/training-image-03.jpg') }}" alt="Third Class">
+                    <img src="{{ secure_asset('images/training-image-03.jpg') }}" alt="Third Class">
                     <h4>Third Training Class</h4>
                     <p>Fusce laoreet malesuada rhoncus. Donec ultricies diam tortor, id auctor neque posuere sit amet. Aliquam pharetra, augue vel cursus porta, nisi tortor vulputate sapien, id scelerisque felis magna id felis. Proin neque metus, pellentesque pharetra semper vel, accumsan a neque.</p>
                     <div class="main-button">
@@ -225,7 +225,7 @@
                     </div>
                   </article>
                   <article id='tabs-4'>
-                    <img src="{{ asset('images/training-image-04.jpg') }}" alt="Fourth Training">
+                    <img src="{{ secure_asset('images/training-image-04.jpg') }}" alt="Fourth Training">
                     <h4>Fourth Training Class</h4>
                     <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aenean ultrices elementum odio ac tempus. Etiam eleifend orci lectus, eget venenatis ipsum commodo et.</p>
                     <div class="main-button">
@@ -245,7 +245,7 @@
 				<div class="col-lg-6 offset-lg-3">
 					<div class="section-heading dark-bg">
 						<h2>Classes <em>Schedule</em></h2>
-						<img src="{{ asset('images/line-dec.png') }}" alt="">
+						<img src="{{ secure_asset('images/line-dec.png') }}" alt="">
 						<p>Nunc urna sem, laoreet ut metus id, aliquet consequat magna. Sed viverra ipsum dolor, ultricies fermentum massa consequat eu.</p>
 					</div>
 				</div>
@@ -311,7 +311,7 @@
 				<div class="col-lg-6 offset-lg-3">
 					<div class="section-heading">
 						<h2>Expert <em>Trainers</em></h2>
-						<img src="{{ asset('images/line-dec.png') }}" alt="">
+						<img src="{{ secure_asset('images/line-dec.png') }}" alt="">
 						<p>Nunc urna sem, laoreet ut metus id, aliquet consequat magna. Sed viverra ipsum dolor, ultricies fermentum massa consequat eu.</p>
 					</div>
 				</div>
@@ -320,7 +320,7 @@
 				<div class="col-lg-4">
 					<div class="trainer-item">
 						<div class="image-thumb">
-							<img src="{{ asset('images/first-trainer.jpg') }}" alt="">
+							<img src="{{ secure_asset('images/first-trainer.jpg') }}" alt="">
 						</div>
 						<div class="down-content">
 							<span>Strength Trainer</span>
@@ -338,7 +338,7 @@
 				<div class="col-lg-4">
 					<div class="trainer-item">
 						<div class="image-thumb">
-							<img src="{{ asset('images/second-trainer.jpg') }}" alt="">
+							<img src="{{ secure_asset('images/second-trainer.jpg') }}" alt="">
 						</div>
 						<div class="down-content">
 							<span>Muscle Trainer</span>
@@ -356,7 +356,7 @@
 				<div class="col-lg-4">
 					<div class="trainer-item">
 						<div class="image-thumb">
-							<img src="{{ asset('images/third-trainer.jpg') }}" alt="">
+							<img src="{{ secure_asset('images/third-trainer.jpg') }}" alt="">
 						</div>
 						<div class="down-content">
 							<span>Power Trainer</span>
@@ -440,22 +440,22 @@
 	</footer>
 
 	<!-- jQuery -->
-	<script src="{{ asset('js/jquery-2.1.0.min.js') }}"></script>
+	<script src="{{ secure_asset('js/jquery-2.1.0.min.js') }}"></script>
 
 	<!-- Bootstrap -->
-	<script src="{{ asset('js/popper.js') }}"></script>
-	<script src="{{ asset('js/bootstrap.min.js') }}"></script>
+	<script src="{{ secure_asset('js/popper.js') }}"></script>
+	<script src="{{ secure_asset('js/bootstrap.min.js') }}"></script>
 
 	<!-- Plugins -->
-	<script src="{{ asset('js/scrollreveal.min.js') }}"></script>
-	<script src="{{ asset('js/waypoints.min.js') }}"></script>
-	<script src="{{ asset('js/jquery.counterup.min.js') }}"></script>
-	<script src="{{ asset('js/imgfix.min.js') }}"></script>
-	<script src="{{ asset('js/mixitup.js') }}"></script>
-	<script src="{{ asset('js/accordions.js') }}"></script>
+	<script src="{{ secure_asset('js/scrollreveal.min.js') }}"></script>
+	<script src="{{ secure_asset('js/waypoints.min.js') }}"></script>
+	<script src="{{ secure_asset('js/jquery.counterup.min.js') }}"></script>
+	<script src="{{ secure_asset('js/imgfix.min.js') }}"></script>
+	<script src="{{ secure_asset('js/mixitup.js') }}"></script>
+	<script src="{{ secure_asset('js/accordions.js') }}"></script>
 
 	<!-- Global Init -->
-	<script src="{{ asset('js/custom.js') }}"></script>
+	<script src="{{ secure_asset('js/custom.js') }}"></script>
 
   </body>
 </html>

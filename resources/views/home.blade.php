@@ -63,7 +63,7 @@
 @endsection
 
 @section('scripts')
-<script src="{{ asset('js/chart.min.js') }}"></script>
+<script src="{{ secure_asset('js/chart.min.js') }}"></script>
 <script>
 document.addEventListener("DOMContentLoaded", function() {
     const thisChart = document.getElementById("chart").getContext("2d");
