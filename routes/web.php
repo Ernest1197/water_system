@@ -58,3 +58,8 @@ Route::prefix('users')->group(function () {
     Route::get('/{user}/edit', 'DefaultController@userEdit')->name('users.edit');
     Route::put('/{user}', 'DefaultController@userUpdate')->name('users.update');
 });
+
+Route::prefix('notifications')->group(function () {
+    Route::get('/', 'NotificationController@index')->name('notifications.index');
+    Route::get('/seen/{notification}', 'NotificationController@seen')->name('notifications.seen');
+});

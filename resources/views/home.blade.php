@@ -56,6 +56,14 @@
                 <a href="{{ route('bills.index') }}" class="btn btn-sm btn-outline-primary">View</a>
             </div>
         </div>
+        @endif @if (Auth::user()->role != "admin")
+        <div class="col-md-3">
+            <div class="card card-body shadow border-0 mb-2">
+                <h1>{{ number_format($notificationsCount) }}</h1>
+                <p>Notifications</p>
+                <a href="{{ route('notifications.index') }}" class="btn btn-sm btn-outline-primary">View</a>
+            </div>
+        </div>
         @endif
         <div class="col-md-12 mt-5"><canvas id="chart"></canvas></div>
 	</div>
@@ -63,7 +71,7 @@
 @endsection
 
 @section('scripts')
-<script src="{{ secure_asset('js/chart.min.js') }}"></script>
+<script src="{{ asset('js/chart.min.js') }}"></script>
 <script>
 document.addEventListener("DOMContentLoaded", function() {
     const thisChart = document.getElementById("chart").getContext("2d");

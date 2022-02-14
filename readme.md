@@ -14,9 +14,9 @@ link: https://water-billing-system-2022.herokuapp.com/
 
 -   Show error message
 
-    -   [ ] register
-    -   [ ] add bill
+    -   [x] register
+    -   [x] add bill
 
 -   [x] payment
 -   [ ] settings
--   [ ] notifications
+-   [x] notifications

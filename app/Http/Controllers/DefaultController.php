@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Bill;
 use App\User;
+use App\Notification;
 use Illuminate\Http\Request;
 use Illuminate\Database\QueryException;
 
@@ -31,8 +32,9 @@ class DefaultController extends Controller
         $myBills = Bill::where('client_id', auth()->id())->count();
         $totalConsumption = Bill::where('client_id', auth()->id())->sum('consumption');
         $totalBillAmount = Bill::where('client_id', auth()->id())->sum('bill_amount');
+        $notificationsCount = Notification::where([['user_id', auth()->id()],['seen', false]])->count();
 
-        return view('home', compact(['clientCount', 'userCount', 'billsCount', 'myBills', 'totalConsumption', 'totalBillAmount', 'unpaidBillsCount']));
+        return view('home', compact(['clientCount', 'userCount', 'billsCount', 'myBills', 'totalConsumption', 'totalBillAmount', 'unpaidBillsCount', 'notificationsCount']));
     }
 
     // show all users
