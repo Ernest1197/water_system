@@ -63,3 +63,8 @@ Route::prefix('notifications')->group(function () {
     Route::get('/', 'NotificationController@index')->name('notifications.index');
     Route::get('/seen/{notification}', 'NotificationController@seen')->name('notifications.seen');
 });
+
+Route::prefix('settings')->group(function() {
+    Route::get('/', 'SettingsController@show')->name('settings.show');
+    Route::put('/', 'SettingsController@update')->name('settings.update');
+});

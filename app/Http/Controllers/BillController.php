@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Bill;
 use App\User;
 use App\Payment;
+use App\Settings;
 use App\Notification;
 use Illuminate\Http\Request;
 
@@ -76,7 +77,8 @@ class BillController extends Controller
     public function show(User $user)
     {
         $bills = Bill::latest()->where('client_id', $user->id)->paginate(20);
-        return view('bills.index', compact('bills', 'user'));
+        $settings = Settings::where('user_id', $user->id)->first();
+        return view('bills.index', compact('bills', 'user', 'settings'));
     }
 
     // add bill to user
@@ -85,8 +87,8 @@ class BillController extends Controller
         // find last user's bill
         $bill = Bill::latest()->where('client_id', $user->id)->first();
         $previous_reading = $bill ? $bill->present_reading : $user->first_meter_reading;
-
-        return view('bills.user', compact(['user', 'previous_reading']));
+        $settings = Settings::where('user_id', $user->id)->first();
+        return view('bills.user', compact(['user', 'previous_reading', 'settings']));
     }
 
     // save bill

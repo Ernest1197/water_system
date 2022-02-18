@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-md navbar-light bg-light shadow-sm">
 	<div class="container">
 		<a class="navbar-brand text-uppercase font-weight-bold" href="{{ url('/') }}">
-            <span class='text-primary'>Water</span> Management <span class='text-primary'>System</span>
+            <span class='text-primary'>Water</span> Billing <span class='text-primary'>System</span>
 		</a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
 			<span class="navbar-toggler-icon"></span>
@@ -22,8 +22,8 @@
 				<li class="nav-item"><a href="{{ route('payments.index') }}" class="nav-link">Payments</a></li>
 				<li class="nav-item"><a href="{{ route('users.index') }}" class="nav-link">Users</a></li>
 				@endif
-				@if (Auth::user()->role != 'user')
-				<li class="nav-item"><a href="#" class="nav-link">Settings</a></li>
+				@if (Auth::user()->role == 'client')
+				<li class="nav-item"><a href="{{ route('settings.show') }}" class="nav-link">Settings</a></li>
 				@endif
 			</ul>
 			@endauth

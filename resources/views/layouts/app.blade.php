@@ -14,6 +14,18 @@
     <!-- Styles -->
     <link href="{{ secure_asset('css/app.css') }}" rel="stylesheet">
 	<link rel="stylesheet" href="{{ secure_asset('css/templatemo-training-studio.css') }}">
+    <style>
+        html {
+            background: url("/images/wallpaper.jpg") no-repeat;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center center;
+        }
+        body {
+            background: transparent;
+            min-height: 100vh;
+        }
+    </style>
 </head>
 <body>
     <div id="app">

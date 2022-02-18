@@ -41,6 +41,9 @@
 				</div>
 			</div>
 		</div>
+        <div class="col-md-4">
+            @include('partials.client-card')
+        </div>
 	</div>
 </div>
 @endsection

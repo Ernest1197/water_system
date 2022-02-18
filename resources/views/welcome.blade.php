@@ -10,7 +10,7 @@
 	<meta name="author" content="">
 	<link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap" rel="stylesheet">
 
-	<title>Water Management System</title>
+	<title>Water Billing System</title>
 
 	<!-- Additional CSS Files -->
 	<link rel="stylesheet" type="text/css" href="{{ secure_asset('css/bootstrap.min.css') }}">
@@ -30,7 +30,7 @@
 				<div class="col-12">
 					<nav class="main-nav">
 						<!-- ***** Logo Start ***** -->
-						<a href="/" class="logo"><em>Water</em> Management <em>System</em></a>
+						<a href="/" class="logo"><em>Water</em> Billing <em>System</em></a>
 						<!-- ***** Logo End ***** -->
 						<!-- ***** Menu Start ***** -->
 						<ul class="nav">
@@ -164,7 +164,7 @@
 			<div class="row">
 				<div class="col-lg-6 col-md-6 col-xs-12">
 					<div id="map">
-					  <iframe src="https://maps.google.com/maps?q=Av.+L%C3%BAcio+Costa,+Rio+de+Janeiro+-+RJ,+Brazil&t=&z=13&ie=UTF8&iwloc=&output=embed" width="100%" height="600px" frameborder="0" style="border:0" allowfullscreen></iframe>
+					  <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d15950.003100847824!2d30.124284799999998!3d-1.9529727999999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2srw!4v1645187325272!5m2!1sen!2srw" width="100%" height="600px" frameborder="0" style="border:0" allowfullscreen></iframe>
 					</div>
 				</div>
 				<div class="col-lg-6 col-md-6 col-xs-12">
@@ -211,8 +211,10 @@
 			<div class="row">
 				<div class="col-lg-12">
 					<p>
-						{{ date('Y') }} Water Management System
-						<a rel="nofollow" href="https://templatemo.com" class="tm-text-link" target="_parent"> - Theme by TemplateMo</a>
+						{{ date('Y') }} Water Management System <br>
+						<a rel="nofollow noreferrer noopener" href="https://templatemo.com" class="tm-text-link text-white" target="_blank">
+                            Theme by TemplateMo
+                        </a>
 					</p>
 				</div>
 			</div>

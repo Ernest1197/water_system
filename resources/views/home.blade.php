@@ -65,7 +65,7 @@
             </div>
         </div>
         @endif
-        <div class="col-md-12 mt-5"><canvas id="chart"></canvas></div>
+        <div class="col-md-12 mt-3"><div class='card card-body shadow'><canvas id="chart"></canvas></div></div>
 	</div>
 </div>
 @endsection
