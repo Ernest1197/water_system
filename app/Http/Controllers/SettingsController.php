@@ -38,6 +38,7 @@ class SettingsController extends Controller
             'province' => $request->province,
             'district' => $request->district,
             'sector' => $request->sector,
+            'id_number' => $request->id_number,
             'user_id' => $user->id,
         ];
 

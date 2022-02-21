@@ -211,7 +211,7 @@
 			<div class="row">
 				<div class="col-lg-12">
 					<p>
-						{{ date('Y') }} Water Management System <br>
+						{{ date('Y') }} Water Billing System <br>
 						<a rel="nofollow noreferrer noopener" href="https://templatemo.com" class="tm-text-link text-white" target="_blank">
                             Theme by TemplateMo
                         </a>

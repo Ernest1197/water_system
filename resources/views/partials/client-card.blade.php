@@ -13,6 +13,10 @@
                         <td>{{ $user->email }}</td>
                     </tr>
                     <tr>
+                        <th>ID Number</th>
+                        <td>{{ $settings->id_number ?? '' }}</td>
+                    </tr>
+                    <tr>
                         <th>Phone</th>
                         <td>{{ $settings->phone ?? '' }}</td>
                     </tr>

@@ -58,6 +58,17 @@
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
+                            <label for="id_number">ID number</label>
+                            <input
+                                type="text"
+                                id="id_number"
+                                class="form-control"
+                                name="id_number"
+                                placeholder="ID number"
+                                value="{{ $settings->id_number ?? '' }}"
+                            />
+                        </div>
+                        <div class="form-group">
                             <label for="phone">Phone Number</label>
                             <input
                                 type="text"
