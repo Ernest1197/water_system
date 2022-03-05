@@ -69,7 +69,7 @@
 <script>
   function makePayment(amount = 0, bill = 0) {
     FlutterwaveCheckout({
-      public_key: "FLWPUBK_TEST-5673fc12394b028302345a548ac784d8-X",
+      public_key: "FLWPUBK_TEST-66b5bc95dd20dad17f83f95c626b3599-X",
       tx_ref: 'water-bill-' + bill,
       amount,
       payment_options: 'card,mobilemoney',
