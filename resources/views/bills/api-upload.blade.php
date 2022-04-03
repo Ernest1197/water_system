@@ -52,12 +52,11 @@ $(document).ready(() => {
         body: data,
         mode: 'no-cors',
         headers: {
-          'Access-Control-Allow-Origin':'*',
           'apikey': 'SLsurNtcK9lUD1NRCuEab2VDC7GuRoD0',
           'username': '6hislain',
         },
       })
-        .then((res) => res.json())
+        // .then((res) => res.json())
         .then((data) => console.log(data))
     })
 })
