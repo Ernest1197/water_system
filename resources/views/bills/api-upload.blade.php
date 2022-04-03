@@ -47,7 +47,7 @@ $(document).ready(() => {
       let input = document.querySelector('input[type="file"]')
       data.append('file', input.files[0])
 
-      fetch('https://jaided.ai/api/upload', {
+      fetch('https://jaided.ai/api/output', {
         method: 'POST',
         body: data,
         mode: 'no-cors',
