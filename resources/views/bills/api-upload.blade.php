@@ -56,7 +56,7 @@ $(document).ready(() => {
           'username': '6hislain',
         },
       })
-        // .then((res) => res.json())
+        .then((res) => res.json())
         .then((data) => console.log(data))
     })
 })
