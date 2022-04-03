@@ -9,7 +9,7 @@
             <div class="card-header">Upload Bill Image</div>
             <div class="card-body">
                 <p class='mb-3'>This form will attempt to extract water meter reading from an image</p>
-                <form method="post" id='this-form'>
+                <form method="post" id='this-form' enctype="multipart/form-data">
                     @csrf
                     <div class="form-group">
                         <input
@@ -21,7 +21,7 @@
                         />
                     </div>
                     <div class="form-group">
-                        <select name="user" class='form-control' required='true'>
+                        <select name='user' class='form-control' required='true'>
                           <option value="">. . . Client . . .</option>
                           @foreach ($users as $user)
                           <option value="{{ $user->id }}">{{ $user->name }} - {{ $user->email }}</option>
@@ -43,10 +43,7 @@
 $(document).ready(() => {
     $("#this-form").submit(function(e) {
       e.preventDefault()
-      let data = new FormData()
-      let input = document.querySelector('input[type="file"]')
-      data.append('file', input.files[0])
-
+      let data = new FormData(document.forms.namedItem("this-form"))
       fetch('https://jaided.ai/api/output', {
         method: 'POST',
         body: data,
