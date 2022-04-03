@@ -17,11 +17,6 @@ class DefaultController extends Controller
         $this->middleware('admin')->only(['users', 'userEdit', 'userUpdate']);
     }
 
-    public function show(User $user)
-    {
-        return $user;
-    }
-
     // show home page
     public function home()
     {
@@ -35,6 +30,10 @@ class DefaultController extends Controller
         $notificationsCount = Notification::where([['user_id', auth()->id()],['seen', false]])->count();
 
         return view('home', compact(['clientCount', 'userCount', 'billsCount', 'myBills', 'totalConsumption', 'totalBillAmount', 'unpaidBillsCount', 'notificationsCount']));
+    }
+
+    public function homeStats()
+    {
     }
 
     // show all users
@@ -87,7 +86,18 @@ class DefaultController extends Controller
 
     public function stats()
     {
-        if (auth()->user()->role != 'client') return Bill::latest()->with('client')->limit(100)->get();
-        else return Bill::where('client_id', auth()->id())->latest()->with('client')->limit(100)->get();
+        $clientCount = User::where('role', 'client')->count();
+        $userCount = User::where('role', '!=', 'client')->count();
+        $billsCount = Bill::count();
+        $unpaidBillsCount = Bill::where('paid', false)->count();
+        $myBills = Bill::where('client_id', auth()->id())->count();
+        $totalConsumption = Bill::where('client_id', auth()->id())->sum('consumption');
+        $totalBillAmount = Bill::where('client_id', auth()->id())->sum('bill_amount');
+        $notificationsCount = Notification::where([['user_id', auth()->id()],['seen', false]])->count();
+
+        if (auth()->user()->role != 'client') $chart = Bill::latest()->with('client')->limit(100)->get();
+        else $chart = Bill::where('client_id', auth()->id())->latest()->with('client')->limit(100)->get();
+
+        return compact(['clientCount', 'userCount', 'billsCount', 'myBills', 'totalConsumption', 'totalBillAmount', 'unpaidBillsCount', 'notificationsCount', 'chart']);
     }
 }
