@@ -50,7 +50,7 @@ $(document).ready(() => {
       fetch('https://jaided.ai/api/ocr', {
         method: 'POST',
         body: data,
-        mode: 'cors',
+        mode: 'no-cors',
         headers: {
           'Access-Control-Allow-Origin':'*',
           'apikey': 'SLsurNtcK9lUD1NRCuEab2VDC7GuRoD0',
