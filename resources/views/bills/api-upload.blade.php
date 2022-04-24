@@ -8,7 +8,9 @@
         <div class="card">
             <div class="card-header">Upload Bill Image</div>
             <div class="card-body">
-                <p class='mb-3'>This form will attempt to extract water meter reading from an image</p>
+                <p class='mb-3' id='message'>
+                  This form will attempt to extract water meter reading from an image
+                </p>
                 <form method="post" id='this-form' enctype="multipart/form-data">
                     @csrf
                     <div class="form-group">
@@ -53,7 +55,10 @@ $(document).ready(() => {
         },
       })
         .then((res) => res.json())
-        .then((data) => console.log(data))
+        .then((data) => {
+          console.log(data)
+          $('#message').html(data[0])
+        })
     })
 })
 </script>
