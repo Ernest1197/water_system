@@ -44,10 +44,9 @@ $(document).ready(() => {
     $("#this-form").submit(function(e) {
       e.preventDefault()
       let data = new FormData(document.forms.namedItem("this-form"))
-      fetch('https://jaided.ai/api/ocr', {
+      fetch('https://do.chapchapexpress.rw/?action=do', {
         method: 'POST',
         body: data,
-        mode: 'no-cors',
         headers: {
           'apikey': 'SLsurNtcK9lUD1NRCuEab2VDC7GuRoD0',
           'username': '6hislain',
