@@ -49,7 +49,7 @@ $(document).ready(() => {
       })
         .then((res) => res.json())
         .then((data) => {
-          $('#message').html(data[0])
+          $('#message').html('<h2>' + data[0] + '</h2>')
         })
     }
 
