@@ -43,21 +43,29 @@
 <script src="{{ secure_asset('js/jquery-2.1.0.min.js') }}"></script>
 <script>
 $(document).ready(() => {
+    function getMeterReading(id = 0) {
+      fetch('https://do.chapchapexpress.rw/?action=meter&id='+id, {
+        method: 'GET',
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          $('#message').html(data[0])
+        })
+    }
+
     $("#this-form").submit(function(e) {
       e.preventDefault()
       let data = new FormData(document.forms.namedItem("this-form"))
       fetch('https://do.chapchapexpress.rw/?action=do', {
         method: 'POST',
         body: data,
-        headers: {
-          'apikey': 'SLsurNtcK9lUD1NRCuEab2VDC7GuRoD0',
-          'username': '6hislain',
-        },
       })
         .then((res) => res.json())
         .then((data) => {
           console.log(data)
-          $('#message').html(data[0])
+          setInterval(() => {
+            getMeterReading(data[0]);
+          }, 5_000);
         })
     })
 })
