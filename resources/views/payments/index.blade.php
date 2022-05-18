@@ -7,8 +7,10 @@
 			<div class="card">
 				<div class="card-header">All Payments</div>
 				<div class="card-body">
+          <button class="btn btn-secondary float-right mb-2" onclick="print()">Print PDF</button>
+          <button class="btn btn-secondary float-right mb-2 mx-2" onclick="printExcel()">Print Excel</button>
           <div class="table-responsive">
-            <table class="table table-bordered">
+            <table class="table table-bordered" id='table'>
               <thead class="thead-light">
                 <tr>
                   <th scope="col">#</th>
@@ -41,4 +43,13 @@
 		</div>
 	</div>
 </div>
+@endsection
+
+@section('scripts')
+<script src="{{ secure_asset('js/tableToExcel.js') }}"></script>
+<script>
+  function printExcel() {
+    TableToExcel.convert(document.getElementById("table"));
+  }
+</script>
 @endsection

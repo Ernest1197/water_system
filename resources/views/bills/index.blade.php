@@ -10,8 +10,10 @@
         <div class="card">
             <div class="card-header">{{ isset($user) ? $user->name . ' (bills)' : 'All Bills' }}</div>
             <div class="card-body">
+                <button class="btn btn-secondary float-right mb-2" onclick="print()">Print PDF</button>
+                <button class="btn btn-secondary float-right mb-2 mx-2" onclick="printExcel()">Print Excel</button>
                 <div class="table-responsive">
-                    <table class="table table-bordered">
+                    <table class="table table-bordered" id='table'>
                         <thead class="thead-light">
                             <tr>
                                 <th scope="col">#</th>
@@ -65,6 +67,7 @@
 @endsection
 
 @section('scripts')
+<script src="{{ secure_asset('js/tableToExcel.js') }}"></script>
 <script src="https://checkout.flutterwave.com/v3.js"></script>
 <script>
   function makePayment(amount = 0, bill = 0) {
@@ -90,6 +93,9 @@
       },
       onclose: function() {},
     });
+  }
+  function printExcel() {
+    TableToExcel.convert(document.getElementById("table"));
   }
 </script>
 @endsection
