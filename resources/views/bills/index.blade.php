@@ -67,7 +67,7 @@
 @endsection
 
 @section('scripts')
-<script src="{{ secure_asset('js/tableToExcel.js') }}"></script>
+<script src="{{ asset('js/tableToExcel.js') }}"></script>
 <script src="https://checkout.flutterwave.com/v3.js"></script>
 <script>
   function makePayment(amount = 0, bill = 0) {

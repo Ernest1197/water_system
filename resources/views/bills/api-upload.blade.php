@@ -40,7 +40,7 @@
 @endsection
 
 @section('scripts')
-<script src="{{ secure_asset('js/jquery-2.1.0.min.js') }}"></script>
+<script src="{{ asset('js/jquery-2.1.0.min.js') }}"></script>
 <script>
 $(document).ready(() => {
     function getMeterReading(id = 0) {

@@ -46,7 +46,7 @@
 @endsection
 
 @section('scripts')
-<script src="{{ secure_asset('js/tableToExcel.js') }}"></script>
+<script src="{{ asset('js/tableToExcel.js') }}"></script>
 <script>
   function printExcel() {
     TableToExcel.convert(document.getElementById("table"));

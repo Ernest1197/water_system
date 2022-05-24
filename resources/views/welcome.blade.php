@@ -13,11 +13,11 @@
 	<title>Water Billing System</title>
 
 	<!-- Additional CSS Files -->
-	<link rel="stylesheet" type="text/css" href="{{ secure_asset('css/bootstrap.min.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap.min.css') }}">
 
-	<link rel="stylesheet" type="text/css" href="{{ secure_asset('css/font-awesome.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ asset('css/font-awesome.css') }}">
 
-	<link rel="stylesheet" href="{{ secure_asset('css/templatemo-training-studio.css') }}">
+	<link rel="stylesheet" href="{{ asset('css/templatemo-training-studio.css') }}">
 
 	</head>
 
@@ -81,7 +81,7 @@
 				<div class="col-lg-6 offset-lg-3">
 					<div class="section-heading">
 						<h2>About <em>Us</em></h2>
-						<img src="{{ secure_asset('images/line-dec.png') }}" alt="waves">
+						<img src="{{ asset('images/line-dec.png') }}" alt="waves">
 						<p>We provide an interface which helps you keep track of you water consumption, while allowing you to pay bills progressively anytime, anywhere.</p>
 					</div>
 				</div>
@@ -89,7 +89,7 @@
 					<ul class="features-items">
 						<li class="feature-item">
 							<div class="left-icon">
-								<img src="{{ secure_asset('images/tap.png') }}" alt="First One">
+								<img src="{{ asset('images/tap.png') }}" alt="First One">
 							</div>
 							<div class="right-content">
 								<h4>Monitor your consumption</h4>
@@ -99,7 +99,7 @@
 						</li>
 						<li class="feature-item">
 							<div class="left-icon">
-								<img src="{{ secure_asset('images/pay.png') }}" alt="second one">
+								<img src="{{ asset('images/pay.png') }}" alt="second one">
 							</div>
 							<div class="right-content">
 								<h4>Pay bills</h4>
@@ -109,7 +109,7 @@
 						</li>
 						<li class="feature-item">
 							<div class="left-icon">
-								<img src="{{ secure_asset('images/analytics.png') }}" alt="third gym training">
+								<img src="{{ asset('images/analytics.png') }}" alt="third gym training">
 							</div>
 							<div class="right-content">
 								<h4>Quick analytics</h4>
@@ -123,7 +123,7 @@
 					<ul class="features-items">
 						<li class="feature-item">
 							<div class="left-icon">
-								<img src="{{ secure_asset('images/bell.png') }}" alt="fourth muscle">
+								<img src="{{ asset('images/bell.png') }}" alt="fourth muscle">
 							</div>
 							<div class="right-content">
 								<h4>Get notifications</h4>
@@ -133,7 +133,7 @@
 						</li>
 						<li class="feature-item">
 							<div class="left-icon">
-								<img src="{{ secure_asset('images/form.png') }}" alt="training fifth">
+								<img src="{{ asset('images/form.png') }}" alt="training fifth">
 							</div>
 							<div class="right-content">
 								<h4>Update your information</h4>
@@ -143,7 +143,7 @@
 						</li>
 						<li class="feature-item">
 							<div class="left-icon">
-								<img src="{{ secure_asset('images/bubble.png') }}" alt="gym training">
+								<img src="{{ asset('images/bubble.png') }}" alt="gym training">
 							</div>
 							<div class="right-content">
 								<h4>...Much more to come</h4>
@@ -222,22 +222,22 @@
 	</footer>
 
 	<!-- jQuery -->
-	<script src="{{ secure_asset('js/jquery-2.1.0.min.js') }}"></script>
+	<script src="{{ asset('js/jquery-2.1.0.min.js') }}"></script>
 
 	<!-- Bootstrap -->
-	<script src="{{ secure_asset('js/popper.js') }}"></script>
-	<script src="{{ secure_asset('js/bootstrap.min.js') }}"></script>
+	<script src="{{ asset('js/popper.js') }}"></script>
+	<script src="{{ asset('js/bootstrap.min.js') }}"></script>
 
 	<!-- Plugins -->
-	<script src="{{ secure_asset('js/scrollreveal.min.js') }}"></script>
-	<script src="{{ secure_asset('js/waypoints.min.js') }}"></script>
-	<script src="{{ secure_asset('js/jquery.counterup.min.js') }}"></script>
-	<script src="{{ secure_asset('js/imgfix.min.js') }}"></script>
-	<script src="{{ secure_asset('js/mixitup.js') }}"></script>
-	<script src="{{ secure_asset('js/accordions.js') }}"></script>
+	<script src="{{ asset('js/scrollreveal.min.js') }}"></script>
+	<script src="{{ asset('js/waypoints.min.js') }}"></script>
+	<script src="{{ asset('js/jquery.counterup.min.js') }}"></script>
+	<script src="{{ asset('js/imgfix.min.js') }}"></script>
+	<script src="{{ asset('js/mixitup.js') }}"></script>
+	<script src="{{ asset('js/accordions.js') }}"></script>
 
 	<!-- Global Init -->
-	<script src="{{ secure_asset('js/custom.js') }}"></script>
+	<script src="{{ asset('js/custom.js') }}"></script>
 
   </body>
 </html>
